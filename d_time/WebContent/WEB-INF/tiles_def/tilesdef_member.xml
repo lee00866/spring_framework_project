@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	
+	
+	<definition name="mem_layout" template="/WEB-INF/template/mem_layout.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/template/mem_header.jsp" />
+		
+		<put-attribute name="footer"
+			value="/WEB-INF/template/footer.jsp" />
+	</definition>
+	<definition name="main_member" extends="mem_layout">
+		<put-attribute name="title" value="Ci.CHA" />
+		<put-attribute name="body" value="/WEB-INF/view/main_member.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="mem/menu_recipe" extends="stock_layout">
+		<put-attribute name="title" value="메뉴 레시피" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/member/sell/menu_recipe.jsp" />
+	</definition>
+	
+	
+	
+	
+	
+<!-- 나의정보수정 관리자/회원 -->
+	<definition name="admin/myinfo/myinfo" extends="admin_layout">
+		<put-attribute name="title" value="나의정보수정"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/myinfo/myinfo.jsp"/>
+	</definition>
+	
+	<definition name="admin/myinfo/myinfo_pwdCheck" extends="admin_layout">
+		<put-attribute name="title" value="나의정보수정"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/myinfo/myinfo_pwdCheck.jsp"/>
+	</definition>
+	
+	<definition name="admin/myinfo/myinfo_modifyForm" extends="admin_layout">
+		<put-attribute name="title" value="나의정보수정"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/myinfo/myinfo_modifyForm.jsp"/>
+	</definition>
+
+
+	<definition name="mem/myinfo/myinfo" extends="mem_layout">
+		<put-attribute name="title" value="나의정보수정"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/myinfo/myinfo.jsp"/>
+	</definition>
+	
+	<definition name="mem/myinfo/myinfo_pwdCheck" extends="mem_layout">
+		<put-attribute name="title" value="나의정보수정"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/myinfo/myinfo_pwdCheck.jsp"/>
+	</definition>
+	
+	<definition name="mem/myinfo/myinfo_modifyForm" extends="mem_layout">
+		<put-attribute name="title" value="나의정보수정"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/myinfo/myinfo_modifyForm.jsp"/>
+	</definition>
+
+
+<!-- 쪽지 관리자/회원 -->
+
+	<definition name="admin/message/msg_detail" extends="admin_layout">
+		<put-attribute name="title" value="쪽지상세보기"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/message/msg_detail.jsp"/>
+	</definition>
+	
+	<definition name="admin/message/msg_receive_list" extends="admin_layout">
+		<put-attribute name="title" value="받은쪽지함"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/message/msg_receive_list.jsp"/>
+	</definition>
+	
+	<definition name="admin/message/msg_send_list" extends="admin_layout">
+		<put-attribute name="title" value="보낸쪽지함"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/message/msg_send_list.jsp"/>
+	</definition>
+	
+	<definition name="admin/message/msg_writeForm" extends="admin_layout">
+		<put-attribute name="title" value="쪽지쓰기"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/message/msg_writeForm.jsp"/>
+	</definition>
+	
+	
+	<definition name="mem/message/msg_detail" extends="mem_layout">
+		<put-attribute name="title" value="쪽지상세보기"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/message/msg_detail.jsp"/>
+	</definition>
+	
+	<definition name="mem/message/msg_receive_list" extends="mem_layout">
+		<put-attribute name="title" value="받은쪽지함"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/message/msg_receive_list.jsp"/>
+	</definition>
+	
+	<definition name="mem/message/msg_send_list" extends="mem_layout">
+		<put-attribute name="title" value="보낸쪽지함"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/message/msg_send_list.jsp"/>
+	</definition>
+	
+	<definition name="mem/message/msg_writeForm" extends="mem_layout">
+		<put-attribute name="title" value="쪽지쓰기"/>
+		<put-attribute name="body" value="/WEB-INF/view/all/message/msg_writeForm.jsp"/>
+	</definition>	
+	
+	
+	
+	
+	
+	
+	
+	<definition name="sell/main" extends="mem_layout">
+		<put-attribute name="title" value="판매하기" />
+		<put-attribute name="body" value="/WEB-INF/view/member/sell/sell_main.jsp" />
+	</definition>
+	<definition name="sell/sell_sale_do" extends="mem_layout">
+		<put-attribute name="title" value="판매처리" />
+		<put-attribute name="body" value="/WEB-INF/view/member/sell/sell_sale_do.jsp" />
+	</definition>
+	
+	
+	<definition name="stock/stock_status" extends="mem_layout">
+		<put-attribute name="title" value="Cafe.CiCHA" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/member/stock/stock_status.jsp" />
+	</definition>
+
+	<definition name="orders/orders_list" extends="mem_layout">
+		<put-attribute name="title" value="Cafe.CiCHA" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/member/orders/orders_list.jsp" />
+	</definition>
+
+	<definition name="orders/orders_addForm" extends="mem_layout">
+		<put-attribute name="title" value="Cafe.CiCHA" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/member/orders/orders_addForm.jsp" />
+	</definition>
+
+	<definition name="orders/orders_content" extends="mem_layout">
+		<put-attribute name="title" value="Cafe.CiCHA" />
+		<put-attribute name="body"
+			value="/WEB-INF/view/member/orders/orders_content.jsp" />
+	</definition>
+	
+
+</tiles-definitions>

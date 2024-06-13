@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mem">
+
+<update id="change_stype" parameterType="map">
+update member set mem_type=#{mem_type} where s_no=#{s_no}
+</update>
+
+<!-- 회원가입 -->
+<insert id="insertMem" parameterType="model.Member_DTO">
+insert into member values (member_no.nextVal,#{s_no},#{mem_type},#{mem_id},#{mem_pwd},#{mem_name},#{mem_hp})
+</insert>
+
+<!--id중복확인 -->
+<select id="selectId" resultType="String" parameterType="String">
+select mem_id from member where mem_id=#{mem_id} 
+</select>
+
+<select id="loginMem" parameterType="model.Member_DTO" resultType="model.Member_DTO">
+select * from store, member where store.s_no=member.s_no and mem_id=#{mem_id} AND mem_pwd=#{mem_pwd}
+</select>
+
+<!-- 지점코드 유무확인 -->
+<select id="selectcode" resultType="model.Store_DTO" parameterType="String">
+select *
+from store 
+where s_code=#{s_code}
+</select>
+<!-- <resultMap id="storeinfo" type="java.util.HashMap">
+        <result property="s_no" column="s_no"/>
+        <result property="s_name" column="s_name"/>
+        <result property="s_code" column="s_code"/>
+         <result property="s_type" column="s_type"/>
+</resultMap> -->
+  
+<select id="selectsno" parameterType="int" resultType="model.Member_DTO">
+select * from member where s_no=#{s_no}
+</select>
+
+<!-- 마이페이지 -->
+<select id="selectPwd" parameterType="HashMap" resultType="String">
+	select mem_pwd from member where mem_id=#{mem_id} and mem_pwd=#{mem_pwd}
+</select>
+
+<update id="updateinfo" parameterType="model.Member_DTO" >
+update member set mem_pwd=#{mem_pwd} ,mem_name=#{mem_name}, mem_hp=#{mem_hp}
+where mem_id=#{mem_id}
+</update>
+
+<!-- 비밀번호찾기 -->
+<select id="pwfind" parameterType="model.Member_DTO" resultType="model.Member_DTO">
+select * from store, member where store.s_no=member.s_no AND mem_id=#{mem_id} AND s_code=#{s_code}
+</select>
+
+<update id="pwchange" parameterType="model.Member_DTO" >
+update member set mem_pwd=#{mem_pwd}
+where mem_id=#{mem_id}
+</update>
+
+</mapper>
